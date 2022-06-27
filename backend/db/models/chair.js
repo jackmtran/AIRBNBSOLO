@@ -5,10 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     address: DataTypes.STRING,
     city: DataTypes.STRING,
-    state: DataTypes.STRING
+    state: DataTypes.STRING,
+    userId: DataTypes.INTEGER
   }, {});
   Chair.associate = function(models) {
-    // associations can be defined here
+    Chair.belongsTo(models.User, {foreignKey: 'userId'})
+    Chair.hasMany(models.Image, {foreignKey: 'chairId'})
   };
   return Chair;
 };

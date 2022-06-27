@@ -8,6 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+        chairId: {
+        allowNull: false,
+        references: {model: 'Chairs'},
+        type: Sequelize.INTEGER
+      },
       imgUrl: {
         type: Sequelize.STRING
       },

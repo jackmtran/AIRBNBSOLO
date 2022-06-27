@@ -1,13 +1,13 @@
-/* button {
+.button {
     display:inline-block;
     padding:0.25em 1em;
-    border: 0.2em solid white;
+    border: 0.2em solid black;
     margin: 0 0.2em 0.2em 0;
     border-radius:0.2em;
     text-decoration:none;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
+    color:black;
     text-align:center;
     background-color:transparent;
     text-transform:uppercase
-} */
+}
