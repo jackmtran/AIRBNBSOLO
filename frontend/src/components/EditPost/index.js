@@ -1,21 +1,24 @@
 // frontend/src/components/LoginFormPage/index.js
-import { addChairs } from '../../store/chairs'
+import { editChairs , deleteChairs } from '../../store/chairs'
 import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory, useParams } from "react-router-dom";
-import './Post.css'
 
-function MakePost() {
+function EditPost() {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector(state => state.session.user);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
+  const {id} = useParams();
+  const chair = useSelector(state => state.chairs);
+  const singleChair = chair[id];
+
+  const [name, setName] = useState(singleChair.name);
+  const [description, setDescription] = useState(singleChair.description);
+  const [price, setPrice] = useState(singleChair.price);
+  const [address, setAddress] = useState(singleChair.address);
+  const [city, setCity] = useState(singleChair.city);
+  const [state, setState] = useState(singleChair.state);
   const [userId] = useState(user.id);
 
   const updateName = (e) => setName(e.target.value);
@@ -26,12 +29,7 @@ function MakePost() {
   const updateState = (e) => setState(e.target.value);
 
 
-
-
-
-
   const handleSubmit = async (e) => {
-
 
     const chairList = {
       name,
@@ -40,10 +38,11 @@ function MakePost() {
       address,
       city,
       state,
-      userId
+      userId,
+      id
     }
     e.preventDefault();
-    dispatch(addChairs(chairList));
+    dispatch(editChairs(chairList, id));
     history.push('/chairs')
   };
 
@@ -52,21 +51,28 @@ function MakePost() {
     history.push('/chairs')
   }
 
+  const handleCancelClickDelete = (e) => {
+    e.preventDefault();
+    dispatch(deleteChairs(chair, id))
+    history.push('/chairs')
+  };
+
   return (
     <>
       <h1>List Your Chairs !</h1>
       <form className='post-form' onSubmit={handleSubmit}>
         <input type="text" placeholder="Name" value={name} onChange={updateName} required />
-        <input type="text" placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
+        <input type='text' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
         <input type="text" placeholder="Price" value={price} onChange={updatePrice} required />
         <input type="text" placeholder="Address" value={address} onChange={updateAddress} required />
         <input type="text" placeholder="City" value={city} onChange={updateCity} required />
         <input type="text" placeholder="State" value={state} onChange={updateState} required />
-        <button type="submit" className='button' >Submit</button>
+        <button type="submit" className='button'> Submit</button>
         <button type="button" className='button' onClick={handleCancelClick}> Cancel</button>
+        <button type="button" className='button' onClick={handleCancelClickDelete}> Delete</button>
       </form>
     </>)
 }
 
 
-export default MakePost;
+export default EditPost;

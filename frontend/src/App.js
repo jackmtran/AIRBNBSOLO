@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import MakePost from "./components/MakePost";
+import EditPost from "./components/EditPost";
 import ShowChairs  from "./components/Chairs";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/chairs">
             <ShowChairs/>
+          </Route>
+          <Route path="/chair/:id">
+            <EditPost />
           </Route>
           <Route path="/create">
             <MakePost />
