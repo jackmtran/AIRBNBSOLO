@@ -107,8 +107,8 @@ export const chairReducer = (state = initialState, action) => {
     });
       return newState;
 
-      // case ADD_CHAIR:
-      //   return { ...state, [action.chair.id]: { ...action.chair}}
+      case ADD_CHAIR:
+        return { ...state, [action.chair.id]: { ...action.chair}}
 
 
   default:

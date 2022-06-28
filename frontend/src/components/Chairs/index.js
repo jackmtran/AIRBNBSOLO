@@ -19,6 +19,8 @@ function ShowChairs() {
         {chairsObject && chairsArray.map(chair => {
             return <ul key={chair.id}>
                 <li>{chair.name}</li>
+                {/* <li>{chair.name}</li> */}
+                <li>{chair.address}, { chair.city}, { chair.state}</li>
             </ul>
         })}
         </>
