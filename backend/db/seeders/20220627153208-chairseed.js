@@ -5,6 +5,7 @@ module.exports = {
       return queryInterface.bulkInsert('Chairs', [
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -15,6 +16,7 @@ module.exports = {
       },
       {
         name: 'goodwill wooden chair',
+        description: 'my favorite chair',
         price: 2,
         address: '1234 Street St',
         city: 'City',
@@ -25,6 +27,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair 2',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -35,6 +38,7 @@ module.exports = {
       },
       {
         name: 'herman miller chair',
+        description: 'my favorite chair',
         price: 30,
         address: '123 Address St',
         city: 'San Jose',
@@ -45,6 +49,7 @@ module.exports = {
       },
       {
         name: 'Bar Stool',
+        description: 'my favorite chair',
         price: 100,
         address: '123 Avenue Ave',
         city: 'Los Angeles',
@@ -55,6 +60,7 @@ module.exports = {
       },
       {
         name: 'bathroom foot stool',
+        description: 'my favorite chair',
         price: 2,
         address: '1 Road Rd',
         city: 'City',
@@ -65,6 +71,7 @@ module.exports = {
       },
       {
         name: 'floor pillow',
+        description: 'my favorite chair',
         price: 20,
         address: '2 Street Ave',
         city: 'Another City',
@@ -75,6 +82,7 @@ module.exports = {
       },
       {
         name: 'Dining room chair',
+        description: 'my favorite chair',
         price: 11,
         address: '1 Two St',
         city: 'City City',
@@ -85,6 +93,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -95,6 +104,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -105,6 +115,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -115,6 +126,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',
@@ -125,6 +137,7 @@ module.exports = {
       },
       {
         name: 'target lawn chair',
+        description: 'my favorite chair',
         price: 5,
         address: '123 Street St',
         city: 'San Jose',

@@ -11,6 +11,7 @@ function MakePost() {
   const history = useHistory();
   const user = useSelector(state => state.session.user);
   const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
@@ -18,6 +19,7 @@ function MakePost() {
   const [userId] = useState(user.id);
 
   const updateName = (e) => setName(e.target.value);
+  const updateDescription = (e) => setDescription(e.target.value);
   const updatePrice = (e) => setPrice(e.target.value);
   const updateAddress = (e) => setAddress(e.target.value);
   const updateCity = (e) => setCity(e.target.value);
@@ -36,6 +38,7 @@ function MakePost() {
 
     const chairList = {
       name,
+      description,
       price,
       address,
       city,
@@ -52,6 +55,7 @@ function MakePost() {
       <h1>List Your Chairs !</h1>
       <form className='post-form' onSubmit={handleSubmit}>
         <input type="text" placeholder="Name" value={name} onChange={updateName} required/>
+        <input type="text" placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required/>
         <input type="text" placeholder="Price" value={price} onChange={updatePrice} required/>
         <input type="text" placeholder="Address" value={address} onChange={updateAddress} required/>
         <input type="text" placeholder="City" value={city} onChange={updateCity} required/>
