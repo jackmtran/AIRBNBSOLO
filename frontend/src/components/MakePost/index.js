@@ -3,10 +3,12 @@ import { addChairs } from '../../store/chairs'
 import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink , useHistory } from "react-router-dom";
 import './Post.css'
 
 function MakePost() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = useSelector(state => state.session.user);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -29,21 +31,21 @@ function MakePost() {
 
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
 
-    const chair = ({
+
+    const chairList = {
       name,
       price,
       address,
       city,
       state,
       userId
-    });
-
-
-
-  }
+    }
+    e.preventDefault();
+    dispatch(addChairs(chairList));
+    history.push('/chairs')
+  };
 
   return (
     <>

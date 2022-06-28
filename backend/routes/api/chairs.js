@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db/models');
-const asyncHandler  = require('express-async-handler')
+const asyncHandler  = require('express-async-handler');
+const { render } = require('../../app');
 
 //READ
 router.get('/', asyncHandler(async(req, res) => {
@@ -17,12 +18,12 @@ router.post('/create',  asyncHandler(async (req, res) => {
 		const { name, price, address, city, state, userId } = req.body;
 
     const newChair = await db.Chair.create({
-      name:'plss',
-      price: 10,
-      address: 'pls',
-      city:'pls',
-      state: 'pls',
-      userId: 1 })
+      name:req.body.name,
+      price: req.body.price,
+      address: req.body.address,
+      city:req.body.city,
+      state: req.body.state,
+      userId:req.body.userId})
 
     return res.json(newChair)
 	}));
