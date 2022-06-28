@@ -49,7 +49,7 @@ export const getChairs = () => async (dispatch) => {
 // CREATE
 export const addChairs = (newChair) => async dispatch => {
 
-  const res = await csrfFetch(`/api/create`, {
+  const res = await csrfFetch(`/api/chairs/create`, {
     method: 'POST',
     headers: { 'Content-Type' : 'application/json' },
     body: JSON.stringify(newChair)
@@ -58,16 +58,9 @@ export const addChairs = (newChair) => async dispatch => {
   if (res.ok) {
     const createdChair = await res.json()
     dispatch(addChair(createdChair))
-    return createdChair
+    return createdChair;
   }
 };
-
-// export const addChairs = () => async(dispatch) => {
-//   const response = await csrfFetch(`/api/create`);
-//   const chair = await response.json();
-//   dispatch(addChair(chair));
-//   return response
-// }
 
 
 // //UPDATE

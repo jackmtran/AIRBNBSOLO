@@ -16,10 +16,15 @@ router.get('/', asyncHandler(async(req, res) => {
 router.post('/create',  asyncHandler(async (req, res) => {
 		const { name, price, address, city, state, userId } = req.body;
 
-    const newChair = await Chair.create({ name, price, address, city, state, userId })
-    const thisChair = await Chair.findByPK(newChair.id, {
-    })
-    return res.json(thisChair)
+    const newChair = await db.Chair.create({
+      name:'plss',
+      price: 10,
+      address: 'pls',
+      city:'pls',
+      state: 'pls',
+      userId: 1 })
+
+    return res.json(newChair)
 	}));
 
 
