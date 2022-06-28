@@ -11,3 +11,14 @@
     background-color:transparent;
     text-transform:uppercase
 }
+form {
+    background-color:rgb(255, 255, 255);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:auto;
+    margin-top:100px;
+    border: 1px solid black;
+    margin-left:23%;
+    border-radius:3px
+}

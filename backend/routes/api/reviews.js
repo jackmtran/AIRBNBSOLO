@@ -23,7 +23,7 @@ router.post( '/:id(\\d+)', asyncHandler(async (req, res) => {
  })
 );
 
-router.put('/:id(\\d+)', chairValid, asyncHandler(async (req, res, next) => {
+router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     const reviewId = parseInt(req.params.id, 10);
     const review = await db.Review.findByPk(reviewId);
 

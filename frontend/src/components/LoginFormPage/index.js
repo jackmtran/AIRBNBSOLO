@@ -53,7 +53,7 @@ function LoginFormPage() {
         />
       </label>
       </div>
-      <button class='button' type="submit">Log In</button>
+      <button className='button' type="submit">Log In</button>
     </form>
   );
 }
