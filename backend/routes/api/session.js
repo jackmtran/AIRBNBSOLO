@@ -1,12 +1,9 @@
 // backend/routes/api/session.js
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
-
 const router = express.Router();
-
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
@@ -20,6 +17,9 @@ const validateLogin = [
       .withMessage('Please provide a password.'),
     handleValidationErrors
   ];
+
+
+  //LOGIN
 
   router.post(
     '/',
@@ -45,6 +45,9 @@ const validateLogin = [
     })
   );
 
+
+  //LOGOUT
+
 router.delete(
     '/',
     (_req, res) => {
@@ -52,6 +55,8 @@ router.delete(
       return res.json({ message: 'success' });
     }
   );
+
+  //SESSION USER
 
 router.get(
     '/',

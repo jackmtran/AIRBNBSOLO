@@ -1,127 +1,124 @@
 import { csrfFetch } from "./csrf"
 
-const CREATE_CHAIR = 'chair/CREATE_CHAIR'
-const READ_CHAIR = 'chair/READ_CHAIR'
-const UPDATE_CHAIR = 'chair/UPDATE_CHAIR'
+const ADD_CHAIR = 'chair/ADD_CHAIR'
+const GET_CHAIR = 'chair/GET_CHAIR'
+const EDIT_CHAIR = 'chair/EDIT_CHAIR'
 const DELETE_CHAIR = 'chair/DELETE_CHAIR'
 
-
-const createChair = chair => {
+const getChair = (allChairs) => {
   return {
-    type: CREATE_CHAIR,
+    type: GET_CHAIR,
+    allChairs
+  }
+}
+
+const addChair = chair => {
+  return {
+    type: ADD_CHAIR,
     chair
   }
 }
 
 
-const readChair = chair => {
+const editChair = chair => {
   return {
-    type: READ_CHAIR,
+    type: EDIT_CHAIR,
     chair
   }
 }
 
-
-const updateChair = chair => {
-  return {
-    type: UPDATE_CHAIR,
-    chair
-  }
-}
-
-
-
-const deleteChair = chair => {
+const deleteChair = id => {
   return {
     type: DELETE_CHAIR,
-    chair
+    id
   }
 }
 
 //THUNKING
 
 //READ
-export const readChairs = () => async dispatch => {
-  const res = await csrfFetch('/api/chairs')
+export const getChairs = () => async (dispatch) => {
+
+  const response = await csrfFetch(`/api/chairs`)
+
+    const allChairs = await response.json();
+    dispatch(getChair(allChairs))
+};
+
+
+// CREATE
+export const addChairs = (newChair) => async dispatch => {
+
+  const res = await csrfFetch(`/api/create`, {
+    method: 'POST',
+    headers: { 'Content-Type' : 'application/json' },
+    body: JSON.stringify(newChair)
+  });
 
   if (res.ok) {
-    const chairs = await res.json()
-    dispatch(readChair(chairs))
-    return res
+    const createdChair = await res.json()
+    dispatch(addChair(createdChair))
+    return createdChair
   }
-}
+};
 
-
-//CREATE
-// export const createChairs = (newChair) => async dispatch => {
-//   const res = await csrfFetch('/api/chairs/create', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(newChair)
-//   })
-
-//   if (res.ok) {
-//     const newchairs = await res.json()
-//     dispatch(createChair(newchairs))
-//     return newchairs
-//   }
+// export const addChairs = () => async(dispatch) => {
+//   const response = await csrfFetch(`/api/create`);
+//   const chair = await response.json();
+//   dispatch(addChair(chair));
+//   return response
 // }
 
 
-
-
 // //UPDATE
-// export const updateChairs = deets => async dispatch => {
-//   const res = await fetch(`/api/items/${deets.id}`, {
-//     method: 'PUT',
-//     headers: {'Content-Type': 'application/json'},
-//     body: JSON.stringify(deets)
-//   });
+export const editChairs = (chair) => async dispatch => {
 
-//   if (res.ok) {
-//     const chair = await res.json();
-//     dispatch(updateChair(chair));
-//     return chair;
-//   }
-// };
+  const res = await csrfFetch(`/api/chairs/${chair.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(chair)
+  });
+
+  if (res.ok) {
+    const editedChair = await res.json();
+    dispatch(editChair(editedChair));
+    return editedChair;
+  }
+};
 
 // //DELETE
-// export const deleteChairs = (chairId, userId) => async dispatch => {
-//   const res = await fetch(`/api/chairs/${chairId}`, {
-//     method: 'DELETE',
-//   });
+export const deleteChairs = (id) => async dispatch => {
 
-//   if (res.ok) {
-//     const { id: deletedChairId } = await res.json();
-//     dispatch(deleteChair(deletedChairId, userId));
-//     return deletedChairId;
-//   }
-// };
+  const res = await csrfFetch(`/api/chairs/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (res.ok) {
+    const chairId = await res.json();
+    dispatch(deleteChair(chairId));
+    return chairId;
+  }
+};
+
 
 
 const initialState = {};
 
 export const chairReducer = (state = initialState, action) => {
-  let newState = {...state};
-  switch(action.type) {
-    case READ_CHAIR:
-      action.chairs.forEach((chair) => {
-        return newState[chair.id] = chair;
+  let newState = { ...state }
+   switch (action.type) {
+
+    case GET_CHAIR:
+      action.allChairs.forEach((chair) => {
+      return newState[chair.id] = chair;
     });
       return newState;
-    case CREATE_CHAIR:
-      if(!state[action.createChair.id]) {
-        newState = {
-          ...state,
-          [action.createChair.id]: action. createChairs,
-        };
-      }
-  return newState
+
+      // case ADD_CHAIR:
+      //   return { ...state, [action.chair.id]: { ...action.chair}}
+
+
   default:
     return state;
   }
 }
-
-
-
-export default chairReducer;

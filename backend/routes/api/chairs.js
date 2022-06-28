@@ -1,43 +1,30 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../db/models');
-const { csrfProtection, asyncHandler } = require('./utils');
-const { check, validationResult } = require('express-validator');
+const asyncHandler  = require('express-async-handler')
 
-const chairNotFoundError = (id) => {
-  const err = Error(`Chair with id ${id} not found.`);
-  err.title = 'That chair does not exist';
-  err.status = 404;
-  return err;
-}
+//READ
+router.get('/', asyncHandler(async(req, res) => {
 
-const chairValid = [
-	check('review')
-		.exists({ checkFalsy: true })
-		.withMessage('Please fill in your review.'),
-];
-
-router.get('/', csrfProtection, async(req, res) => {
 	const chairs = await db.Chair.findAll()
-	res.render('chairs', { chairs });
-});
 
-router.post( '/', csrfProtection, chairValid, asyncHandler(async (req, res) => {
+	return res.json(chairs)
+}));
+
+
+//CREATE
+router.post('/create',  asyncHandler(async (req, res) => {
 		const { name, price, address, city, state, userId } = req.body;
 
-        const chairPost = db.Chair.build({
-            name,
-            price,
-            address,
-            city,
-            state,
-            userId
-		});
+    const newChair = await Chair.create({ name, price, address, city, state, userId })
+    const thisChair = await Chair.findByPK(newChair.id, {
+    })
+    return res.json(thisChair)
+	}));
 
-	})
-);
 
-router.put('/:id(\\d+)', chairValid, asyncHandler(async (req, res, next) => {
+  //UPDATE
+router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const chairId = parseInt(req.params.id, 10);
   const chair = await db.Chair.findByPk(chairId);
 
@@ -53,11 +40,13 @@ router.put('/:id(\\d+)', chairValid, asyncHandler(async (req, res, next) => {
   }
 }))
 
+
+//DELETING
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-	const chairId = parseInt(req.params.id, 10);
-	const chairs = await db.Chair.findByPk(chairId);
-			await chairs.destroy();
-			res.redirect('/chairs')
+	const id =req.params.id;
+	const chairs = await db.Chair.findByPk(id);
+	await chairs.destroy();
+	return res.json(id)
 }))
 
 module.exports = router;
