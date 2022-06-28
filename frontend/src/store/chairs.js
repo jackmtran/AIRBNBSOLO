@@ -19,7 +19,6 @@ const addChair = chair => {
   }
 }
 
-
 const editChair = chair => {
   return {
     type: EDIT_CHAIR,
@@ -27,10 +26,10 @@ const editChair = chair => {
   }
 }
 
-const deleteChair = id => {
+const deleteChair = did => {
   return {
     type: DELETE_CHAIR,
-    id
+    did
   }
 }
 
@@ -64,30 +63,30 @@ export const addChairs = (newChair) => async dispatch => {
 
 
 // //UPDATE
-export const editChairs = (chair) => async dispatch => {
+export const editChairs = (chair, id) => async dispatch => {
 
-  const res = await csrfFetch(`/api/chairs/${chair.id}`, {
+  const res = await csrfFetch(`/api/chairs/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(chair)
   });
 
   if (res.ok) {
-    const editedChair = await res.json();
+    const editedChair = await res.json(chair);
     dispatch(editChair(editedChair));
     return editedChair;
   }
 };
 
 // //DELETE
-export const deleteChairs = (id) => async dispatch => {
+export const deleteChairs = (did, id) => async dispatch => {
 
   const res = await csrfFetch(`/api/chairs/${id}`, {
     method: 'DELETE',
   });
 
   if (res.ok) {
-    const chairId = await res.json();
+    const chairId = await res.json(did);
     dispatch(deleteChair(chairId));
     return chairId;
   }
@@ -110,6 +109,13 @@ export const chairReducer = (state = initialState, action) => {
       case ADD_CHAIR:
         return { ...state, [action.chair.id]: { ...action.chair}}
 
+      case EDIT_CHAIR:
+        newState = {...state, [action.chair.id]: action.chair };
+      return newState
+
+      case DELETE_CHAIR:
+        delete newState[action.did.id];
+        return newState
 
   default:
     return state;

@@ -16,17 +16,19 @@ function ShowChairs() {
 
     return (
         <>
+        <h1>All Chairs</h1>
         {chairsObject && chairsArray.map(chair => {
             return <ul key={chair.id}>
                 <li>{chair.name}</li>
                 <li>{chair.description}</li>
                 <li>${chair.price}/day</li>
                 <li>{chair.address}, { chair.city}, { chair.state}</li>
+                <button><NavLink to={`/chair/${chair.id}`}>Edit</NavLink></button>
             </ul>
         })}
         </>
     )
 }
-
+//if chair.userId === userId reveal the edit button
 
 export default ShowChairs

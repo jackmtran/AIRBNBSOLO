@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../../db/models');
 const asyncHandler  = require('express-async-handler');
 const { render } = require('../../app');
+const chair = require('../../db/models/chair');
 
 //READ
 router.get('/', asyncHandler(async(req, res) => {
@@ -18,13 +19,13 @@ router.post('/create',  asyncHandler(async (req, res) => {
 		const { name, description, price, address, city, state, userId } = req.body;
 
     const newChair = await db.Chair.create({
-      name:req.body.name,
-      description:req.body.description,
-      price: req.body.price,
-      address: req.body.address,
-      city:req.body.city,
-      state: req.body.state,
-      userId:req.body.userId})
+      name,
+      description,
+      price,
+      address,
+      city,
+      state,
+      userId})
 
     return res.json(newChair)
 	}));
@@ -32,28 +33,21 @@ router.post('/create',  asyncHandler(async (req, res) => {
 
   //UPDATE
 router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-  const chairId = parseInt(req.params.id, 10);
-  const chair = await db.Chair.findByPk(chairId);
+  const editChair = await db.Chair.findByPk(req.body.id);
+	const { name, description, price, address, city, state, userId } = req.body;
+  const editedChair = await editChair.update(req.body)
 
-  if (chair) {
-    await chair.update({
-            name: req.body.name,
-            chair: req.body.chair,
-        });
-
-        res.send({message: 'Success!', chair})
-  } else {
-    next(chairNotFoundError);
+      return res.json(editedChair)
   }
-}))
+))
 
 
 //DELETING
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-	const id =req.params.id;
+	const id = req.params.id;
 	const chairs = await db.Chair.findByPk(id);
-	await chairs.destroy();
-	return res.json(id)
+	  await chairs.destroy();
+	return res.json({id: chairs.id})
 }))
 
 module.exports = router;
