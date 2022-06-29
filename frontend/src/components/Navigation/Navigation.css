@@ -1,53 +1,50 @@
-.navlink{
+/* .navlink{
     display:inline-block;
     padding:2px;
     border: 0.1em solid black;
     margin-left:10px;
     text-decoration:none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:black;
     text-align:center;
     background-color:transparent;
     text-transform:uppercase;
     font-size:14px;
     font-weight:500;
-    margin-top:10px
 
-}
+} */
 
-.navlinkHOME {
-    display:inline-block;
-    padding:2px;
-    border: 0.1em solid black;
-    text-decoration:none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:black;
-    text-align:center;
-    background-color:transparent;
-    text-transform:uppercase;
-    font-size:14px;
-    font-weight:500;
-    margin-top:10px
 
-}
 
 .chairbutt{
     background-color: transparent;
     border:none;
-    color:bisque;
-    margin-left:6px
+    color:#FF5B61;
+    margin-left:6px;
+    cursor:pointer
 }
 
 .rightnav {
    float:right;
    width:auto;
    text-align:left;
-   padding-right:50px
+   padding-right:50px;
+   margin-top:8px
 }
 
+.navbarright {
+    float:right;
+    width:auto;
+    text-align:left;
+    padding-right:50px;
+    margin-top:8px
+}
 
+.chairbnbpic{
+    width:120px;
+}
 .profile-dropdown {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:black;
     text-transform:uppercase;
     font-size:12px;
@@ -60,6 +57,7 @@
     text-align:left;
     align-items:flex-start;
     padding-right: 18px;
+    /* position:absolute; */
 }
 .profile-dropdown ul{
     align-items:left;
@@ -69,6 +67,7 @@
     margin-bottom:2px;
     margin-top: 10px;
     width: 100px;
+    /* position:absolute; */
 }
 
 .button {
@@ -77,19 +76,19 @@
     margin: 0 0.2em 0.2em 0;
     border-radius:0.2em;
     text-decoration:none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:black;
     text-align:center;
     background-color:transparent;
     text-transform:uppercase;
     cursor:pointer;
-    border:none
+    border:none;
 }
 
 .button:hover {
-    background-color: #c5c5c5;
+    background-color: #d4d4d4;
     border:none;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
+    border-radius:10px
 }
- /* HOVER BECOMES GRAY SLIGHT ROUNDED */

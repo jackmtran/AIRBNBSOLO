@@ -47,8 +47,8 @@ function ProfileButton({ user }) {
 
   return (
     <div className="rightnav">
-        <button type="button" className='button' onClick={forHoverChairs}> Chairs</button>
-        <button type="button" className='button' onClick={forHoverCreate}> Create A Listing!</button>
+        <button type="button" className='button' onClick={forHoverChairs}> Book a chair </button>
+        <button type="button" className='button' onClick={forHoverCreate}> Share your chair</button>
       <button className='chairbutt' onClick={openMenu}>
         <i className="fa-solid fa-chair"></i>
       </button>

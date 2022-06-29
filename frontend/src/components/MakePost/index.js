@@ -54,7 +54,7 @@ function MakePost() {
 
   return (
     <>
-      <h1>List Your Chairs !</h1>
+      <h1>Share the joy of your favorite chair.</h1>
       <form className='post-form' onSubmit={handleSubmit}>
         <input type="text" className='inputs' placeholder="Name" value={name} onChange={updateName} required />
         <input type="text" className='inputs' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />

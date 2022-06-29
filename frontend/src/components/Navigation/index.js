@@ -41,22 +41,23 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <>
+      <div className='navbarright'>
         <button type="button" className='button' onClick={forHoverLOGIN}> Log In</button>
         <button type="button" className='button' onClick={forHoverSIGNUP}> Sign Up</button>
         <button type="button" className='button' onClick={forHoverCHAIRS}> Chairs</button>
-      </>
+      </div>
     );
   }
 
   return (
-    <div>
+    <div className='navbarunder'>
 
     <ul>
-      <ul>
-      <button type="button" className='button' onClick={forHoverHOME}> HOME </button>
+      {/* <ul> */}
+      {/* <button type="button" className='button' onClick={forHoverHOME}> HOME </button> */}
+      <a href="https://imgur.com/ZKEt7ax"><img src="https://i.imgur.com/ZKEt7ax.png" className='chairbnbpic'  onClick={forHoverHOME}/></a>
         {isLoaded && sessionLinks}
-      </ul>
+      {/* </ul> */}
 
     </ul></div>
   );

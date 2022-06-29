@@ -60,7 +60,7 @@ function EditPost() {
 
   return (
     <>
-      <h1>List Your Chairs !</h1>
+      <h1>Woops. It's time to make a fix.</h1>
       <form className='post-form' onSubmit={handleSubmit}>
       <input type="text" className='inputs' placeholder="Name" value={name} onChange={updateName} required />
         <input type="text" className='inputs' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
