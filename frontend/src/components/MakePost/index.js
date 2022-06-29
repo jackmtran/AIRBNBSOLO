@@ -26,12 +26,7 @@ function MakePost() {
   const updateState = (e) => setState(e.target.value);
 
 
-
-
-
-
   const handleSubmit = async (e) => {
-
 
     const chairList = {
       name,
@@ -57,8 +52,8 @@ function MakePost() {
       <h1>Share the joy of your favorite chair.</h1>
       <form className='post-form' onSubmit={handleSubmit}>
         <input type="text" className='inputs' placeholder="Name" value={name} onChange={updateName} required />
-        <input type="text" className='inputs' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
-        <input type="text" className='inputs' placeholder="Price" value={price} onChange={updatePrice} required />
+        <textarea type="text" className='textareas' placeholder="Tell Us About Your Chair." value={description} onChange={updateDescription} required />
+        <input type="text" className='inputs' placeholder="Price/night" value={price} onChange={updatePrice} required />
         <input type="text" className='inputs' placeholder="Address" value={address} onChange={updateAddress} required />
         <input type="text" className='inputs' placeholder="City" value={city} onChange={updateCity} required />
         <input type="text" className='inputslast' placeholder="State" value={state} onChange={updateState} required />

@@ -9,12 +9,9 @@
     text-align: center;
 }
 
-
 div {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
-
 
 .inputs {
     padding:10px;
@@ -44,7 +41,6 @@ div {
 
 h1 {
     text-align: center;
-    margin-top:6%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }

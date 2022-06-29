@@ -47,7 +47,7 @@ function ProfileButton({ user }) {
 
   return (
     <div className="rightnav">
-        <button type="button" className='button' onClick={forHoverChairs}> Book a chair </button>
+        <button type="button" className='button' onClick={forHoverChairs}> Listings </button>
         <button type="button" className='button' onClick={forHoverCreate}> Share your chair</button>
       <button className='chairbutt' onClick={openMenu}>
         <i className="fa-solid fa-chair"></i>
@@ -55,7 +55,6 @@ function ProfileButton({ user }) {
    {showMenu && (
         <ul className="profile-dropdown">
           <ul>Welcome {user.username}!</ul>
-          {/* <ul>{user.email}</ul> */}
           <ul>
             <button className='button'onClick={logout}>Log Out</button>
           </ul>

@@ -12,6 +12,12 @@ router.get('/', asyncHandler(async(req, res) => {
 	return res.json(chairs)
 }));
 
+// //READ 1 CHAIR
+// router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+// 	const id = req.params.id;
+// 	const chairs = await db.Chair.findByPk(id);
+// 	return res.json({chairs})
+// }))
 
 //CREATE
 router.post('/create',  asyncHandler(async (req, res) => {
