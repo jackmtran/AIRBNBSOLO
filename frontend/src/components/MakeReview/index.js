@@ -9,12 +9,13 @@ import './MakeReview.css'
 function MakeReview() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector(state => state.reviews);
-  const chair = useSelector(state => state.reviews);
+  const user = useSelector(state => state.session.user);
+  const chair = useSelector(state => state.chairs);
   const [title, setTitle] = useState("");
   const [reviewLine, setReviewLine] = useState("");
-  const [chairId] = useState(chair.id);
+  const chairId = 3;
   const [userId] = useState(user.id)
+  const id = 2;
 
   const updateTitle = (e) => setTitle(e.target.value);
   const updateReviewLine= (e) => setReviewLine(e.target.value);
@@ -22,11 +23,14 @@ function MakeReview() {
 
   const handleSUBREV= async (e) => {
 
+    console.log(chairId)
+    console.log(chair)
     const reviewList = {
+        id,
         title,
         reviewLine,
+        userId,
         chairId,
-        userId
     };
 
     e.preventDefault();
