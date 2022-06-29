@@ -1,7 +1,6 @@
 .button {
     display:inline-block;
     padding:0.25em 1em;
-    border: 0.1em solid black;
     margin: 0 0.2em 0.2em 0;
     border-radius:0.2em;
     text-decoration:none;
@@ -10,6 +9,7 @@
     text-align:center;
     background-color:transparent;
     text-transform:uppercase;
+    border:none
 }
 
 
@@ -17,18 +17,6 @@ div {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-form {
-    background-color:rgb(255, 255, 255);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:auto;
-    margin-top:100px;
-    /* border: 1px solid black; */
-    margin-left:23%;
-    border-radius:3px
-}
 
 
 .login-form {
@@ -38,18 +26,28 @@ form {
     height: auto;
     margin: auto;
     /* border: 1px solid black; */
-    border-radius: 3px;
+    /* border-radius: 3px; */
     text-align: center;
 }
 
+.post-form {
+    background-color: rgb(255, 255, 255);
+    display: block;
+    width: min-content;
+    height: auto;
+    margin: auto;
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    text-align: center;
+}
 .inputs {
     padding:10px;
-    font-size:12px
+    font-size:10px
 }
 
 .inputslast {
     padding:10px;
-    font-size:12px;
+    font-size:11px;
     margin-bottom:10px;
 }
 

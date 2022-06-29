@@ -19,12 +19,13 @@ function ShowChairs() {
         <>
         <h1>All Chairs</h1>
         {chairsObject && chairsArray.map(chair => {
-            return <ul key={chair.id}>
+            return <ul className='gridthechairs' key={chair.id}>
                 <ul>{chair.name}</ul>
                 <ul>{chair.description}</ul>
                 <ul>${chair.price}/day</ul>
                 <ul>{chair.address}, { chair.city}, { chair.state}</ul>
                 <ul><button className='button'><NavLink className='navlinkEDIT' to={`/chair/${chair.id}`}>Edit</NavLink></button></ul>
+                <ul><button className='button'><NavLink className='navlinkEDIT' to={`/chair/${chair.id}`}>Add A Review</NavLink></button></ul>
             </ul>
         })}
         </>

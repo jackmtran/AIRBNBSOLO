@@ -1,6 +1,6 @@
 .navlink{
     display:inline-block;
-    padding:1px;
+    padding:2px;
     border: 0.1em solid black;
     margin-left:10px;
     text-decoration:none;
@@ -10,15 +10,15 @@
     background-color:transparent;
     text-transform:uppercase;
     font-size:14px;
-    font-weight:500
+    font-weight:500;
+    margin-top:10px
 
 }
 
 .navlinkHOME {
     display:inline-block;
-    padding:1px;
+    padding:2px;
     border: 0.1em solid black;
-
     text-decoration:none;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:black;
@@ -26,33 +26,54 @@
     background-color:transparent;
     text-transform:uppercase;
     font-size:14px;
-    font-weight:500
+    font-weight:500;
+    margin-top:10px
 
 }
 
 .chairbutt{
     background-color: transparent;
     border:none;
-    color:aquamarine
+    color:bisque;
+    margin-left:6px
 }
 
 .rightnav {
    float:right;
-   margin-right:10px;
+   width:auto;
+   text-align:left;
+   padding-right:50px
 }
+
+
 .profile-dropdown {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:black;
     text-transform:uppercase;
     font-size:12px;
     margin-top:2%;
-    border:1px solid black;
+    border:1px solid rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px 5px #d5d5d5;
+    border-radius:10px;
+    align-content: center;
+    width:90%;
+    text-align:left;
+    align-items:flex-start;
+    padding-right: 18px;
+}
+.profile-dropdown ul{
+    align-items:left;
+    padding-bottom:1px;
+    text-align:center;
+    margin-right:25%;
+    margin-bottom:2px;
+    margin-top: 10px;
+    width: 100px;
 }
 
 .button {
     display:inline-block;
     padding:0.25em 1em;
-    border: 0.1em solid black;
     margin: 0 0.2em 0.2em 0;
     border-radius:0.2em;
     text-decoration:none;
@@ -61,4 +82,14 @@
     text-align:center;
     background-color:transparent;
     text-transform:uppercase;
+    cursor:pointer;
+    border:none
 }
+
+.button:hover {
+    background-color: #c5c5c5;
+    border:none;
+    padding:0.25em 1em;
+    margin: 0 0.2em 0.2em 0;
+}
+ /* HOVER BECOMES GRAY SLIGHT ROUNDED */
