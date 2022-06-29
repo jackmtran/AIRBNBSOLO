@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../db/models');
 const asyncHandler  = require('express-async-handler');
-const { render } = require('../../app');
-const chair = require('../../db/models/chair');
+
 
 //READ
 router.get('/', asyncHandler(async(req, res) => {

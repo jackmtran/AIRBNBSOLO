@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory, useParams } from "react-router-dom";
+import './EditPost.css'
 
 function EditPost() {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ function EditPost() {
     history.push('/chairs')
   }
 
-  const handleCancelClickDelete = (e) => {
+  const handleDelete = (e) => {
     e.preventDefault();
     dispatch(deleteChairs(chair, id))
     history.push('/chairs')
@@ -61,15 +62,15 @@ function EditPost() {
     <>
       <h1>List Your Chairs !</h1>
       <form className='post-form' onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={updateName} required />
-        <input type='text' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
-        <input type="text" placeholder="Price" value={price} onChange={updatePrice} required />
-        <input type="text" placeholder="Address" value={address} onChange={updateAddress} required />
-        <input type="text" placeholder="City" value={city} onChange={updateCity} required />
-        <input type="text" placeholder="State" value={state} onChange={updateState} required />
+      <input type="text" className='inputs' placeholder="Name" value={name} onChange={updateName} required />
+        <input type="text" className='inputs' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
+        <input type="text" className='inputs' placeholder="Price" value={price} onChange={updatePrice} required />
+        <input type="text" className='inputs' placeholder="Address" value={address} onChange={updateAddress} required />
+        <input type="text" className='inputs' placeholder="City" value={city} onChange={updateCity} required />
+        <input type="text" className='inputslast' placeholder="State" value={state} onChange={updateState} required />
         <button type="submit" className='button'> Submit</button>
         <button type="button" className='button' onClick={handleCancelClick}> Cancel</button>
-        <button type="button" className='button' onClick={handleCancelClickDelete}> Delete</button>
+        <button type="button" className='button' onClick={handleDelete}> Delete</button>
       </form>
     </>)
 }

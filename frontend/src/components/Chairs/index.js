@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChairs } from '../../store/chairs';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import './Chairs.css'
 
 function ShowChairs() {
 
@@ -19,11 +20,11 @@ function ShowChairs() {
         <h1>All Chairs</h1>
         {chairsObject && chairsArray.map(chair => {
             return <ul key={chair.id}>
-                <li>{chair.name}</li>
-                <li>{chair.description}</li>
-                <li>${chair.price}/day</li>
-                <li>{chair.address}, { chair.city}, { chair.state}</li>
-                <button><NavLink to={`/chair/${chair.id}`}>Edit</NavLink></button>
+                <ul>{chair.name}</ul>
+                <ul>{chair.description}</ul>
+                <ul>${chair.price}/day</ul>
+                <ul>{chair.address}, { chair.city}, { chair.state}</ul>
+                <ul><button className='button'><NavLink className='navlinkEDIT' to={`/chair/${chair.id}`}>Edit</NavLink></button></ul>
             </ul>
         })}
         </>

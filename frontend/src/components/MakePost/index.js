@@ -56,12 +56,12 @@ function MakePost() {
     <>
       <h1>List Your Chairs !</h1>
       <form className='post-form' onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={updateName} required />
-        <input type="text" placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
-        <input type="text" placeholder="Price" value={price} onChange={updatePrice} required />
-        <input type="text" placeholder="Address" value={address} onChange={updateAddress} required />
-        <input type="text" placeholder="City" value={city} onChange={updateCity} required />
-        <input type="text" placeholder="State" value={state} onChange={updateState} required />
+        <input type="text" className='inputs' placeholder="Name" value={name} onChange={updateName} required />
+        <input type="text" className='inputs' placeholder="Tell Us About Your Chair" value={description} onChange={updateDescription} required />
+        <input type="text" className='inputs' placeholder="Price" value={price} onChange={updatePrice} required />
+        <input type="text" className='inputs' placeholder="Address" value={address} onChange={updateAddress} required />
+        <input type="text" className='inputs' placeholder="City" value={city} onChange={updateCity} required />
+        <input type="text" className='inputslast' placeholder="State" value={state} onChange={updateState} required />
         <button type="submit" className='button' >Submit</button>
         <button type="button" className='button' onClick={handleCancelClick}> Cancel</button>
       </form>
