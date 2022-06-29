@@ -28,15 +28,15 @@ router.post('/create',  asyncHandler(async (req, res) => {
 }));
 
 
-//UPDATE
-  router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-    const editReview = await db.Review.findByPk(req.body.id);
-    const { title, reviewLine, userId, chairId } = req.body;
-    const editedReview = await editReview.update(req.body)
+// //UPDATE
+//   router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+//     const editReview = await db.Review.findByPk(req.body.id);
+//     const { title, reviewLine, userId, chairId } = req.body;
+//     const editedReview = await editReview.update(req.body)
 
-        return res.json(editedReview)
-    }
-  ))
+//         return res.json(editedReview)
+//     }
+//   ))
 
 
   //DELETE
