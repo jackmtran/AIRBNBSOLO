@@ -110,8 +110,8 @@ export const chairReducer = (state = initialState, action) => {
         return { ...state, [action.chair.id]: { ...action.chair}}
 
       case EDIT_CHAIR:
-        newState = {...state, [action.chair.id]: action.chair };
-      return newState
+        return {...state, [action.chair.id]: action.chair };
+
 
       case DELETE_CHAIR:
         delete newState[action.did.id];

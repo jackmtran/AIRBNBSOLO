@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import { NavLink , useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 
@@ -35,22 +35,24 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
-      <button onClick={openMenu}>
-      <i className="fa-solid fa-chair"></i>
+    <div className="rightnav">
+
+      <button className='chairbutt' onClick={openMenu}>
+        <i className="fa-solid fa-chair"></i>
       </button>
-      <NavLink to="/chairs">Chairs</NavLink>
-      <NavLink to="/create">Create a Listing</NavLink>
+       <NavLink className='navlink' to="/chairs">Chairs</NavLink>
+      <NavLink className='navlink' to="/create">Create a Listing</NavLink>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
+          <ul>Welcome {user.username}!</ul>
+          <ul>Account Email:{user.email}</ul>
+          <ul>
             <button onClick={logout}>Log Out</button>
-          </li>
+          </ul>
         </ul>
       )}
-    </>
+
+    </div>
   );
 }
 

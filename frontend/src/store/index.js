@@ -2,12 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from './session';
 import {chairReducer} from './chairs';
-
+import {reviewReducer} from './reviews'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  chairs: chairReducer
-
+  chairs: chairReducer,
+  reviews: reviewReducer
 });
 
 
