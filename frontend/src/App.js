@@ -7,6 +7,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import MakePost from "./components/MakePost";
 import EditPost from "./components/EditPost";
 import ShowChairs  from "./components/Chairs";
+// import MakeReviews  from "./components/MakeReview";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -37,6 +38,9 @@ function App() {
           <Route path="/create">
             <MakePost />
           </Route>
+          {/* <Route path="/chairs/reviews">
+            <MakeReviews />
+          </Route> */}
         </Switch>
       )}
     </>

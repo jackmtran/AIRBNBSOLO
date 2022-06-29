@@ -1,12 +1,38 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
+
+
+  const forHoverHOME = (e) => {
+    e.preventDefault();
+    history.push('/')
+  }
+  const forHoverLOGIN = (e) => {
+    e.preventDefault();
+    history.push('/login')
+  }
+  const forHoverSIGNUP = (e) => {
+    e.preventDefault();
+    history.push('/signup')
+  }
+  const forHoverCHAIRS = (e) => {
+    e.preventDefault();
+    history.push('/chairs')
+  }
+
+
+
+  // const forHoverCreate = (e) => {
+  //   e.preventDefault();
+  //   history.push('/create')
+  // }
 
   let sessionLinks;
   if (sessionUser) {
@@ -16,9 +42,9 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <NavLink className='navlink' to="/login">Log In</NavLink>
-        <NavLink className='navlink' to="/signup">Sign Up</NavLink>
-        <NavLink className='navlink' to="/chairs">Chairs</NavLink>
+        <button type="button" className='button' onClick={forHoverLOGIN}> Log In</button>
+        <button type="button" className='button' onClick={forHoverSIGNUP}> Sign Up</button>
+        <button type="button" className='button' onClick={forHoverCHAIRS}> Chairs</button>
       </>
     );
   }
@@ -28,7 +54,7 @@ function Navigation({ isLoaded }){
 
     <ul>
       <ul>
-        <NavLink className='navlinkHOME' exact to="/">Home</NavLink>
+      <button type="button" className='button' onClick={forHoverHOME}> HOME </button>
         {isLoaded && sessionLinks}
       </ul>
 

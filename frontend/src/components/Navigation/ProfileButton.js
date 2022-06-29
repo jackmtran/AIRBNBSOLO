@@ -34,23 +34,34 @@ function ProfileButton({ user }) {
     history.push('/home')
   };
 
+  const forHoverChairs = (e) => {
+    e.preventDefault();
+    history.push('/chairs')
+  }
+
+  const forHoverCreate = (e) => {
+    e.preventDefault();
+    history.push('/create')
+  }
+
+
   return (
     <div className="rightnav">
-
+        <button type="button" className='button' onClick={forHoverChairs}> Chairs</button>
+        <button type="button" className='button' onClick={forHoverCreate}> Create A Listing!</button>
       <button className='chairbutt' onClick={openMenu}>
         <i className="fa-solid fa-chair"></i>
       </button>
-       <NavLink className='navlink' to="/chairs">Chairs</NavLink>
-      <NavLink className='navlink' to="/create">Create a Listing</NavLink>
-      {showMenu && (
+   {showMenu && (
         <ul className="profile-dropdown">
           <ul>Welcome {user.username}!</ul>
-          <ul>Account Email:{user.email}</ul>
+          {/* <ul>{user.email}</ul> */}
           <ul>
-            <button onClick={logout}>Log Out</button>
+            <button className='button'onClick={logout}>Log Out</button>
           </ul>
         </ul>
       )}
+
 
     </div>
   );
