@@ -26,9 +26,15 @@ function ShowChairs() {
                     e.preventDefault();
                     history.push(`/chair/${chair.id}`)
                 }
+
                 const forHoverADDREV = (e) => {
                     e.preventDefault();
-                    history.push(`/chair/${chair.id}`)
+                    history.push(`/reviews/create`)
+                }
+
+                const forHoverREADREV = (e) => {
+                    e.preventDefault();
+                    history.push(`/reviews`)
                 }
 
                 return <ul className='gridthechairs' key={chair.id}>
@@ -37,7 +43,8 @@ function ShowChairs() {
                     <ul>${chair.price}/day</ul>
                     <ul>{chair.address}, {chair.city}, {chair.state}</ul>
                     <ul><button className='button buttonspace' onClick={forHoverEDIT}>Edit</button>
-                    <button className='button buttonspace' onClick={forHoverADDREV}>Add A Review</button></ul>
+                    <button className='button buttonspace' onClick={forHoverADDREV}>Add A Review</button>
+                    <button className='button buttonspace' onClick={forHoverREADREV}>Read Reviews</button></ul>
                 </ul>
             })}
         </>

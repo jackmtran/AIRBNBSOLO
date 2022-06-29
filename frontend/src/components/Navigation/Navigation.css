@@ -29,7 +29,7 @@
    width:auto;
    text-align:left;
    padding-right:50px;
-   margin-top:8px
+   margin-top:12px
 }
 
 .navbarright {
@@ -37,27 +37,30 @@
     width:auto;
     text-align:left;
     padding-right:50px;
-    margin-top:8px
+    margin-top:12px
 }
 
 .chairbnbpic{
-    width:120px;
+    width:140px;
+
 }
+
 .profile-dropdown {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color:black;
     text-transform:uppercase;
     font-size:12px;
-    margin-top:2%;
+    margin-top:none;
     border:1px solid rgb(255, 255, 255);
     box-shadow: 5px 5px 5px 5px #d5d5d5;
     border-radius:10px;
     align-content: center;
-    width:90%;
+    width: 220px;
     text-align:left;
     align-items:flex-start;
     padding-right: 18px;
-    /* position:absolute; */
+    position:absolute;
+
 }
 .profile-dropdown ul{
     align-items:left;
@@ -67,7 +70,6 @@
     margin-bottom:2px;
     margin-top: 10px;
     width: 100px;
-    /* position:absolute; */
 }
 
 .button {
@@ -92,3 +94,4 @@
     margin: 0 0.2em 0.2em 0;
     border-radius:10px
 }
+

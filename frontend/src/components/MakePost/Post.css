@@ -25,19 +25,35 @@
 .inputs {
     padding:12px;
     font-size:12px;
+    margin-bottom: 2px;
+    border-radius:3px;
+    border:1px solid rgb(116, 115, 115);
 }
 
 .inputslast {
     padding:12px;
     font-size:12px;
     margin-bottom:10px;
+    border-radius:3px;
+    border:1px solid rgb(116, 115, 115);
+
 }
 
 
 h1 {
     text-align: center;
-    margin-top:6%;
-
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.textareas{
+    width: 91%;
+    height:80px;
+    margin-bottom:none;
+    padding:.5em;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    border:1px solid rgb(116, 115, 115);
+    border-radius:3px;
 
 }

@@ -9,43 +9,44 @@ import './MakeReview.css'
 function MakeReview() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector(state => state.session.user);
+  const user = useSelector(state => state.reviews);
+  const chair = useSelector(state => state.reviews);
   const [title, setTitle] = useState("");
   const [reviewLine, setReviewLine] = useState("");
-  const [userId] = useState(user.id);
   const [chairId] = useState(chair.id);
+  const [userId] = useState(user.id)
 
   const updateTitle = (e) => setTitle(e.target.value);
   const updateReviewLine= (e) => setReviewLine(e.target.value);
 
-  const handleSubmit = async (e) => {
 
+  const handleSUBREV= async (e) => {
 
     const reviewList = {
         title,
         reviewLine,
-        userId,
-        chairId
-    }
+        chairId,
+        userId
+    };
 
     e.preventDefault();
     dispatch(addReviews(reviewList));
     history.push('/reviews')
   };
 
-  const handleCancelClick = (e) => {
+  const handleCANCELREV = (e) => {
     e.preventDefault();
-    history.push('/reviews')
+    history.push('/chairs')
   }
 
   return (
     <>
-      <h1>List Your Chairs !</h1>
-      <form className='post-form' onSubmit={handleSubmit}>
-        <input type="text" className='inputs' placeholder="Title" value={title} onChange={updateTitle} required />
-        <input type="text" className='inputslast' placeholder="How was your experience?" value={reviewLine} onChange={updateReviewLine} required />
-        <button type="submit" className='button' >Submit Your Review</button>
-        <button type="button" className='button' onClick={handleCancelClick}> Cancel</button>
+      <h1>Tell Us About Your Experience.</h1>
+      <form className='post-form' onSubmit={handleSUBREV}>
+        <input type="text" className='inputs' placeholder="tl;dr" value={title} onChange={updateTitle} required />
+        <textarea type="text" className='textareas' placeholder="How was it?" value={reviewLine} onChange={updateReviewLine} required/>
+        <button type="submit" className='button'>Submit Your Review</button>
+        <button type="button" className='button' onClick={handleCANCELREV}> Cancel</button>
       </form>
     </>)
 }
