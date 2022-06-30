@@ -5,6 +5,8 @@ import { NavLink, useHistory } from 'react-router-dom';
 import './Home.css'
 
 
+function homePage() {
+
     return (
         <>
             <h1>Hey, have a seat.</h1>
@@ -14,6 +16,8 @@ import './Home.css'
         </>
     )
 
-//if chair.userId === userId reveal the edit button
+
+}
 
 
+export default homePage
