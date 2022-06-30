@@ -33,10 +33,10 @@ function App() {
           <Route path="/chairs">
             <ShowChairs/>
           </Route>
-          <Route exact path="/reviews/create">
+          <Route exact path="/reviews/create/:id">
             <MakeReview />
           </Route>
-          <Route path="/reviews">
+          <Route path="/reviews/chair/:id">
             <ShowReviews/>
           </Route>
           <Route path="/chair/:id">

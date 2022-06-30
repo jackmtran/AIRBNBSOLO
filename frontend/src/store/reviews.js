@@ -40,8 +40,8 @@ const deleteReview = did => {
 //THUNKING
 
 //READ
-export const getReviews = () => async dispatch => {
-  const res = await csrfFetch('/api/reviews')
+export const getReviews = (id) => async dispatch => {
+  const res = await csrfFetch(`/api/reviews/chair/${id}`)
 
   if (res.ok) {
     const reviews = await res.json()
@@ -50,9 +50,9 @@ export const getReviews = () => async dispatch => {
 }
 
 //CREATE
-export const addReviews = (newReview) => async dispatch => {
+export const addReviews = (newReview) => async (dispatch) => {
 
-  const res = await csrfFetch('/api/reviews/create', {
+  const res = await csrfFetch('/api/reviews/create/:id', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newReview)
