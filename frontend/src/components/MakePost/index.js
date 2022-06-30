@@ -16,6 +16,7 @@ function MakePost() {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [url, setUrl] = useState("");
   const [userId] = useState(user.id);
 
   const updateName = (e) => setName(e.target.value);
@@ -24,6 +25,7 @@ function MakePost() {
   const updateAddress = (e) => setAddress(e.target.value);
   const updateCity = (e) => setCity(e.target.value);
   const updateState = (e) => setState(e.target.value);
+  const updateUrl = (e) => setUrl(e.target.value);
 
 
   const handleSubmit = async (e) => {
@@ -35,6 +37,7 @@ function MakePost() {
       address,
       city,
       state,
+      url,
       userId
     }
     e.preventDefault();
@@ -56,7 +59,8 @@ function MakePost() {
         <input type="text" className='inputs' placeholder="Price/night" value={price} onChange={updatePrice} required />
         <input type="text" className='inputs' placeholder="Address" value={address} onChange={updateAddress} required />
         <input type="text" className='inputs' placeholder="City" value={city} onChange={updateCity} required />
-        <input type="text" className='inputslast' placeholder="State" value={state} onChange={updateState} required />
+        <input type="text" className='inputs' placeholder="State" value={state} onChange={updateState} required />
+        <input type="text" className='inputslast' placeholder="Image URL" value={url} onChange={updateUrl} required />
         <button type="submit" className='button' >Submit</button>
         <button type="button" className='button' onClick={handleCancelClick}> Cancel</button>
       </form>
