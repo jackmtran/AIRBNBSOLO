@@ -20,7 +20,6 @@ function ShowChairs() {
         <>
             <h1>Hey, have a seat.</h1>
             {chairsObject && chairsArray.map(chair => {
-                // if(chair.userId === userId) reveal edit button
 
                 const forHoverEDIT = (e) => {
                     e.preventDefault();
@@ -29,12 +28,13 @@ function ShowChairs() {
 
                 const forHoverADDREV = (e) => {
                     e.preventDefault();
-                    history.push(`/reviews/create`)
+                    const chairId = Number(e.target.id)
+                    history.push(`/reviews/create/${chairId}`)
                 }
 
                 const forHoverREADREV = (e) => {
                     e.preventDefault();
-                    history.push(`/reviews`)
+                    history.push(`/reviews/chair/${chair.id}`);
                 }
 
                 return <ul className='gridthechairs' key={chair.id}>
@@ -43,8 +43,8 @@ function ShowChairs() {
                     <ul>${chair.price}/day</ul>
                     <ul>{chair.address}, {chair.city}, {chair.state}</ul>
                     <ul><button className='button buttonspace' onClick={forHoverEDIT}>Edit</button>
-                    <button className='button buttonspace' onClick={forHoverADDREV}>Add A Review</button>
-                    <button className='button buttonspace' onClick={forHoverREADREV}>Read Reviews</button></ul>
+                    <button className='button buttonspace' id={chair.id} onClick={forHoverADDREV}>Add A Review</button>
+                    <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button></ul>
                 </ul>
             })}
         </>

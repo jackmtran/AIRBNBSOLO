@@ -5,16 +5,20 @@ const asyncHandler  = require('express-async-handler');
 
 
 //GET
-router.get('/', asyncHandler(async(req, res) => {
+router.get('/chair/:id', asyncHandler(async(req, res) => {
 
-	const reviews = await db.Review.findAll()
+	const reviews = await db.Review.findAll({
+    where: {
+      chairId: req.params.id
+    }
+  })
 
 	return res.json(reviews)
 }));
 
 
 //CREATE
-router.post('/create',  asyncHandler(async (req, res) => {
+router.post('/create/:id',  asyncHandler(async (req, res) => {
   const { title, reviewLine, userId, chairId } = req.body;
 
   const newReview = await db.Review.create({

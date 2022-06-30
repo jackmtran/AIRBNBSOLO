@@ -1,5 +1,6 @@
 // frontend/src/components/LoginFormPage/index.js
-import { addReviews } from '../../store/reviews'
+import { addReviews, getReviews } from '../../store/reviews'
+import { getChairs } from '../../store/chairs'
 import React, { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,32 +11,30 @@ function MakeReview() {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector(state => state.session.user);
-  const chair = useSelector(state => state.chairs);
+
   const [title, setTitle] = useState("");
   const [reviewLine, setReviewLine] = useState("");
-  const chairId = 3;
-  const [userId] = useState(user.id)
-  const id = 2;
+  const [userId] = useState(user.id);
 
   const updateTitle = (e) => setTitle(e.target.value);
   const updateReviewLine= (e) => setReviewLine(e.target.value);
 
 
   const handleSUBREV= async (e) => {
+     e.preventDefault();
 
-    console.log(chairId)
-    console.log(chair)
+    const url = window.location.href.split('/')
+    const out = Number(url[url.length - 1])
+
     const reviewList = {
-        id,
         title,
         reviewLine,
         userId,
-        chairId,
+        chairId: out,
     };
 
-    e.preventDefault();
     dispatch(addReviews(reviewList));
-    history.push('/reviews')
+    history.push(`/reviews/chair/${reviewList.chairId}`)
   };
 
   const handleCANCELREV = (e) => {
