@@ -21,7 +21,7 @@ router.get('/', asyncHandler(async(req, res) => {
 
 //CREATE
 router.post('/create',  asyncHandler(async (req, res) => {
-		const { name, description, price, address, city, state, userId } = req.body;
+		const { name, description, price, address, city, state, url, userId } = req.body;
 
     const newChair = await db.Chair.create({
       name,
@@ -30,6 +30,7 @@ router.post('/create',  asyncHandler(async (req, res) => {
       address,
       city,
       state,
+      url,
       userId})
 
     return res.json(newChair)
@@ -39,7 +40,7 @@ router.post('/create',  asyncHandler(async (req, res) => {
   //UPDATE
 router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const editChair = await db.Chair.findByPk(req.body.id);
-	const { name, description, price, address, city, state, userId } = req.body;
+	const { name, description, price, address, city, state, url, userId } = req.body;
   const editedChair = await editChair.update(req.body)
 
       return res.json(editedChair)
@@ -51,6 +52,11 @@ router.put('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 	const id = req.params.id;
 	const chairs = await db.Chair.findByPk(id);
+  const grabAll = await db.Review.findAll({ where: {chairId:id}})
+  for (let i=0; i< grabAll.length; i++) {
+    const reviews = grabAll[i]
+    reviews.destroy()
+  }
 	  await chairs.destroy();
 	return res.json({id: chairs.id})
 }))

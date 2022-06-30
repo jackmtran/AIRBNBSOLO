@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
+    url: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {});
   Chair.associate = function(models) {
     Chair.belongsTo(models.User, {foreignKey: 'userId'})
-    Chair.hasMany(models.Image, {foreignKey: 'chairId'})
     Chair.hasMany(models.Review, {foreignKey: 'chairId'})
   };
   return Chair;

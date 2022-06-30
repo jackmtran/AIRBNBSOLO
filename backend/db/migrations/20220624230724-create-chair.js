@@ -32,6 +32,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      url: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       userId: {
         allowNull: false,
         references: {model: 'Users'},

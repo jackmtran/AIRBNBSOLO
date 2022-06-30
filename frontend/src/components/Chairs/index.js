@@ -38,6 +38,7 @@ function ShowChairs() {
                 }
 
                 return <ul className='gridthechairs' key={chair.id}>
+                    <ul> <a href={chair.url}><img src={chair.url} className='chairbnbpic'/></a></ul>
                     <ul>{chair.name}</ul>
                     <ul>{chair.description}</ul>
                     <ul>${chair.price}/day</ul>

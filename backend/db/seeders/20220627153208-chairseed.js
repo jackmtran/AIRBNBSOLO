@@ -10,6 +10,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -21,6 +22,7 @@ module.exports = {
         address: '1234 Street St',
         city: 'City',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 10,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -32,6 +34,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -43,6 +46,7 @@ module.exports = {
         address: '123 Address St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -54,6 +58,7 @@ module.exports = {
         address: '123 Avenue Ave',
         city: 'Los Angeles',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -65,6 +70,7 @@ module.exports = {
         address: '1 Road Rd',
         city: 'City',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -76,6 +82,7 @@ module.exports = {
         address: '2 Street Ave',
         city: 'Another City',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -87,6 +94,7 @@ module.exports = {
         address: '1 Two St',
         city: 'City City',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 7,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -98,6 +106,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -109,6 +118,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -120,6 +130,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -131,6 +142,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -142,6 +154,7 @@ module.exports = {
         address: '123 Street St',
         city: 'San Jose',
         state: 'California',
+        url: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKqhA3kZfYeUY-zuimBXZx_ERKTXJuhRapazj2JMscjaH4BFY-FrIEKjwrv2RR-DHW-8INK-QuOWo&usqp=CAc",
         userId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
