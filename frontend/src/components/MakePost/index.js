@@ -36,8 +36,7 @@ function MakePost() {
 
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-
+    e.preventDefault();
     let error = false;
     errorsHolder = { ...errorsHolder };
 

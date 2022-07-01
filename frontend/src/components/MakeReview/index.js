@@ -80,8 +80,8 @@ function MakeReview() {
     <>
       <h1>Tell Us About Your Experience.</h1>
       <form className='post-form' onSubmit={handleSUBREV}>
-      {errors.title && <div>{errors.title} </div>}
-      {errors.reviewLine && <div>{errors.reviewLine} </div>}
+      {errors.title && <div className="errorformat">{errors.title} </div>}
+      {errors.reviewLine && <div className="errorformat">{errors.reviewLine} </div>}
         <input type="text" className='inputs' placeholder="tl;dr" value={title} onChange={updateTitle} />
         <textarea type="text" className='textareas' placeholder="How was it?" value={reviewLine} onChange={updateReviewLine}/>
         <button type="submit" className='button'>Submit Your Review</button>

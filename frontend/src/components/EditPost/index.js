@@ -24,10 +24,6 @@ function EditPost() {
 
   const [userId] = useState(user.id);
 
-  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
-  const [errors, setErrors] = useState(errorsHolder);
-
-
   const updateName = (e) => setName(e.target.value);
   const updateDescription = (e) => setDescription(e.target.value);
   const updatePrice = (e) => setPrice(e.target.value);
@@ -37,7 +33,11 @@ function EditPost() {
   const updateUrl = (e) => setUrl(e.target.value);
 
 
+  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
+  const [errors, setErrors] = useState(errorsHolder);
+
   const handleSubmit = async (e) => {
+    e.preventDefault();
     let error = false;
     errorsHolder = { ...errorsHolder };
 
@@ -81,8 +81,8 @@ function EditPost() {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") ) {
-      errorsHolder.url = "URL must end with .jpg or .png"
+    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image") ) {
+      errorsHolder.url = "URL must end with .jpg/.png or contain image"
       error = true
     }
     else if (url.length < 4) {
@@ -91,7 +91,7 @@ function EditPost() {
     }
     setErrors(errorsHolder);
 
-if(!errors){
+if(!error){
     const chairList = {
       name,
       description,
@@ -103,7 +103,7 @@ if(!errors){
       userId,
       id
     }
-    e.preventDefault();
+    // e.preventDefault();
     dispatch(editChairs(chairList, id));
     history.push('/chairs')
   };
