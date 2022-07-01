@@ -48,7 +48,7 @@ function MakeReview() {
       error = true
      }
      else if (reviewLine.length > 40) {
-      errorsHolder.reviewLine = "Reviews must be under 200 characters."
+      errorsHolder.reviewLine = "Reviews must be under 40 characters."
       error = true
      }
      setErrors(errorsHolder);

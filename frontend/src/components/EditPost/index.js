@@ -45,7 +45,7 @@ function EditPost() {
       errorsHolder.name = "The chair's name must be at least 3 characters."
       error = true
     }
-    if (name === '') {
+    else if (name === '') {
       errorsHolder.name = "Tell us your chair's name please please please!"
       error = true
     }
@@ -61,7 +61,7 @@ function EditPost() {
       errorsHolder.description = "Descriptions must be under 50 characters."
       error = true
     }
-    else if (isNaN(price)) {
+    if (isNaN(price)) {
       errorsHolder.price = "Price must be a number"
       error = true
     }
@@ -69,19 +69,19 @@ function EditPost() {
       errorsHolder.price = "You must have a price."
       error = true
     }
-    else if (address.length < 4 || address.length > 40) {
+    if (address.length < 4 || address.length > 40) {
       errorsHolder.address = "Address must be 4 - 40 characters."
       error = true
     }
-    else if (city.length < 4 || city.length > 40) {
+    if (city.length < 4 || city.length > 40) {
       errorsHolder.city = "City must be 4 - 40 characters."
       error = true
     }
-    else if (state.length < 4 || state.length > 15) {
+    if (state.length < 4 || state.length > 15) {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image") ) {
+    if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image") ) {
       errorsHolder.url = "URL must end with .jpg/.png or contain image"
       error = true
     }

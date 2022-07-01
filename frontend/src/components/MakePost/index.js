@@ -60,7 +60,7 @@ function MakePost() {
       errorsHolder.description = "Descriptions must be under 50 characters."
       error = true
     }
-    else if (isNaN(price)) {
+    if (isNaN(price)) {
       errorsHolder.price = "Price must be a number"
       error = true
     }
@@ -68,20 +68,20 @@ function MakePost() {
       errorsHolder.price = "You must have a price."
       error = true
     }
-    else if (address.length < 4 || address.length > 40) {
+    if (address.length < 4 || address.length > 40) {
       errorsHolder.address = "Address must be 4 - 40 characters."
       error = true
     }
-    else if (city.length < 4 || city.length > 40) {
+    if (city.length < 4 || city.length > 40) {
       errorsHolder.city = "City must be 4 - 40 characters."
       error = true
     }
-    else if (state.length < 4 || state.length > 15) {
+    if (state.length < 4 || state.length > 15) {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") ) {
-      errorsHolder.url = "URL must be jpg or png"
+    if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image")) {
+      errorsHolder.url = "URL must be jpg/png or contain image"
       error = true
     }
     else if (url.length < 4) {

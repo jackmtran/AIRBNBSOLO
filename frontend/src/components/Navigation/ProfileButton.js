@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { NavLink, useHistory } from "react-router-dom";
 import { Redirect } from "react-router-dom";
+import { actionClear} from '../../store/reviews'
 
 
 function ProfileButton({ user }) {
@@ -36,11 +37,13 @@ function ProfileButton({ user }) {
 
   const forHoverChairs = (e) => {
     e.preventDefault();
+    dispatch(actionClear())
     history.push('/chairs')
   }
 
   const forHoverCreate = (e) => {
     e.preventDefault();
+    dispatch(actionClear())
     history.push('/create')
   }
 
