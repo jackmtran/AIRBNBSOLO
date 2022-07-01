@@ -92,3 +92,8 @@ div {
    list-style:none;
    padding:3px
 }
+
+img{
+    border-radius:10px;
+    padding-bottom:5px
+}

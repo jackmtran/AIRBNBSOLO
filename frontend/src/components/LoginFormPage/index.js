@@ -24,7 +24,7 @@ function LoginFormPage() {
     })).then(
         (data) => {
             if (data.user)
-            return history.push('/home')
+            return history.push('/')
         }
     )
 }

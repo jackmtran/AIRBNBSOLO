@@ -19,13 +19,13 @@
 .eachchair {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size:14px;
-    padding-right:20px;
+    padding-right:30px;
     padding-top:20px;
     border-radius:20px;
     padding-bottom:10px;
     margin-bottom:10px;
     border: 1px solid rgb(246, 246, 246);
-    width:22.5em;
+    width:22em;
     text-overflow: ellipsis; /* will make [...] at the end */;
 }
 
@@ -39,10 +39,14 @@
 
 .chairspic{
     pointer-events:none;
-    width:170px;
-    height:200px;
+    width:190px;
+    height:250px;
 }
 
 .chairtitle{
     font-weight: bold;
+}
+
+.spacing {
+    padding-top:5px;
 }

@@ -42,11 +42,12 @@ function ShowChairs() {
                     <ul><img src={chair.url} className='chairspic'/></ul>
                     <ul className="chairtitle">{chair.name}</ul>
                     <ul className="longdesc">{chair.description}</ul>
-                    <ul>${chair.price}/day</ul>
-                    <ul>{chair.address}, {chair.city}, {chair.state}</ul>
-                    <ul><button className='button buttonspace' onClick={forHoverEDIT}>Edit</button>
+                    <ul className="chairtitle">${chair.price}/day</ul>
+                    <ul className="bottomline">{chair.address}, {chair.city}, {chair.state}</ul>
+                    <ul className="spacing">
                     <button className='button buttonspace' id={chair.id} onClick={forHoverADDREV}>Add A Review</button>
-                    <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button></ul>
+                    <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button>
+                    <button className='button buttonspace' onClick={forHoverEDIT}>Edit Post</button></ul>
                     </div>
                 </ul>
             })}

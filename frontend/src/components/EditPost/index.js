@@ -24,10 +24,6 @@ function EditPost() {
 
   const [userId] = useState(user.id);
 
-  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
-  const [errors, setErrors] = useState(errorsHolder);
-
-
   const updateName = (e) => setName(e.target.value);
   const updateDescription = (e) => setDescription(e.target.value);
   const updatePrice = (e) => setPrice(e.target.value);
@@ -37,7 +33,11 @@ function EditPost() {
   const updateUrl = (e) => setUrl(e.target.value);
 
 
+  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
+  const [errors, setErrors] = useState(errorsHolder);
+
   const handleSubmit = async (e) => {
+    e.preventDefault();
     let error = false;
     errorsHolder = { ...errorsHolder };
 
@@ -45,7 +45,7 @@ function EditPost() {
       errorsHolder.name = "The chair's name must be at least 3 characters."
       error = true
     }
-    if (name === '') {
+    else if (name === '') {
       errorsHolder.name = "Tell us your chair's name please please please!"
       error = true
     }
@@ -61,7 +61,7 @@ function EditPost() {
       errorsHolder.description = "Descriptions must be under 50 characters."
       error = true
     }
-    else if (isNaN(price)) {
+    if (isNaN(price)) {
       errorsHolder.price = "Price must be a number"
       error = true
     }
@@ -69,20 +69,20 @@ function EditPost() {
       errorsHolder.price = "You must have a price."
       error = true
     }
-    else if (address.length < 4 || address.length > 40) {
+    if (address.length < 4 || address.length > 40) {
       errorsHolder.address = "Address must be 4 - 40 characters."
       error = true
     }
-    else if (city.length < 4 || city.length > 40) {
+    if (city.length < 4 || city.length > 40) {
       errorsHolder.city = "City must be 4 - 40 characters."
       error = true
     }
-    else if (state.length < 4 || state.length > 15) {
+    if (state.length < 4 || state.length > 15) {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") ) {
-      errorsHolder.url = "URL must end with .jpg or .png"
+    if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image") ) {
+      errorsHolder.url = "URL must end with .jpg/.png or contain image"
       error = true
     }
     else if (url.length < 4) {
@@ -91,7 +91,7 @@ function EditPost() {
     }
     setErrors(errorsHolder);
 
-if(!errors){
+if(!error){
     const chairList = {
       name,
       description,
@@ -103,7 +103,7 @@ if(!errors){
       userId,
       id
     }
-    e.preventDefault();
+    // e.preventDefault();
     dispatch(editChairs(chairList, id));
     history.push('/chairs')
   };
