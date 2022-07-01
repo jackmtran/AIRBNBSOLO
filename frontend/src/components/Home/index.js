@@ -5,19 +5,9 @@ import { NavLink, useHistory } from 'react-router-dom';
 import './Home.css'
 
 
-function homePage() {
+function HomePage() {
 
-    return (
-        <>
             <h1>Hey, have a seat.</h1>
 
-
-
-        </>
-    )
-
-
 }
-
-
-export default homePage
+export default HomePage

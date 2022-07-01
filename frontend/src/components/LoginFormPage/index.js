@@ -44,7 +44,7 @@ function LoginFormPage() {
     <form className='login-form' onSubmit={handleSubmit}>
       <h1>Log In</h1>
       <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        {errors.map((error, idx) => <li className="errorformat" key={idx}>{error}</li>)}
       </ul>
       <div>
         <input className='inputs'type="text" value={credential} placeholder="Username/Email" onChange={(e) => setCredential(e.target.value)} required/>

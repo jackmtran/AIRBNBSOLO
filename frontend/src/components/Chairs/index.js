@@ -39,14 +39,15 @@ function ShowChairs() {
 
                 return <ul className='gridthechairs' key={chair.id}>
                     <div className="eachchair">
-                    <ul> <a href={chair.url}><img src={chair.url} className='chairspic'/></a></ul>
-                    <ul>{chair.name}</ul>
-                    <ul>{chair.description}</ul>
+                    <ul><img src={chair.url} className='chairspic'/></ul>
+                    <ul className="chairtitle">{chair.name}</ul>
+                    <ul className="longdesc">{chair.description}</ul>
                     <ul>${chair.price}/day</ul>
                     <ul>{chair.address}, {chair.city}, {chair.state}</ul>
                     <ul><button className='button buttonspace' onClick={forHoverEDIT}>Edit</button>
                     <button className='button buttonspace' id={chair.id} onClick={forHoverADDREV}>Add A Review</button>
-                    <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button></ul></div>
+                    <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button></ul>
+                    </div>
                 </ul>
             })}
         </>

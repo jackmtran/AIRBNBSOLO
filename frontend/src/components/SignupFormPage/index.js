@@ -33,7 +33,7 @@ function SignupFormPage() {
     <form className="signupform" onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
       <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        {errors.map((error, idx) => <li className="errorformat" key={idx}>{error}</li>)}
       </ul>
         <input type="text" className='inputs' value={email} placeholder="Email"onChange={(e) => setEmail(e.target.value)}required/>
         <input type="text" className='inputs' value={username} placeholder="Username"onChange={(e) => setUsername(e.target.value)}required />
