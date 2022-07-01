@@ -1,0 +1,24 @@
+.chairsreviews{
+    display:inline-block;
+    text-align:center;
+    justify-content: center;
+    margin-right:3%;
+    margin-left:3%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 1px solid ghostwhite;
+    width:23%;
+    border-radius:15px;
+    box-shadow: 3px 3px 3px 3px #d5d5d5;
+    padding-right:50px
+}
+
+
+.revtitle{
+    text-transform:uppercase;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.revline{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:15px
+}

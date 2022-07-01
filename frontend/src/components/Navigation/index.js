@@ -12,7 +12,7 @@ function Navigation({ isLoaded }){
 
   const forHoverHOME = (e) => {
     e.preventDefault();
-    history.push('/home')
+    history.push('/')
   }
   const forHoverLOGIN = (e) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ function Navigation({ isLoaded }){
     <ul>
       {/* <ul> */}
       {/* <button type="button" className='button' onClick={forHoverHOME}> HOME </button> */}
-      <a href="https://imgur.com/ZKEt7ax"><img src="https://i.imgur.com/ZKEt7ax.png" className='chairbnbpic'  onClick={forHoverHOME}/></a>
+      <img src="https://i.imgur.com/ZKEt7ax.png" className='chairbnbpic'  onClick={forHoverHOME}/>
         {isLoaded && sessionLinks}
       {/* </ul> */}
 

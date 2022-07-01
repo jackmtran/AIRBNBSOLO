@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import homePage from "./components/Home";
+import HomePage from "./components/Home";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import MakePost from "./components/MakePost";
@@ -22,9 +22,7 @@ function App() {
 
   return (
     <>
-      {/* <Route path="/">
-        <homePage />
-      </Route> */}
+
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

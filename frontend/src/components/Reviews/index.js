@@ -38,11 +38,11 @@ function ShowReviews() {
 
                 }
 
-                return <ul key={review.id}>
-                    <ul>{review.title}</ul>
-                    <ul>{review.reviewLine}</ul>
+                return<div className= "chairsreviews" key={review.id}>
+                    <ul className="revtitle">{review.title}</ul>
+                    <ul className="revline">{review.reviewLine}</ul>
                     <ul><button id={review.id} className='button buttonspace' onClick={forHoverREVDEL}>Delete</button></ul>
-                </ul>
+                </div>
             })}
         </>
     )
