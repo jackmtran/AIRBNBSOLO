@@ -12,7 +12,7 @@ function Navigation({ isLoaded }){
 
   const forHoverHOME = (e) => {
     e.preventDefault();
-    history.push('/')
+    history.push('/home')
   }
   const forHoverLOGIN = (e) => {
     e.preventDefault();

@@ -106,10 +106,11 @@ export const reviewReducer = (state = initialState, action) => {
    switch (action.type) {
 
     case GET_REVIEW:
+      const anotherState = {};
       action.allReviews.forEach((review) => {
-      return newState[review.id] = review;
+      return anotherState[review.id] = review;
     });
-      return newState;
+      return anotherState;
 
       case ADD_REVIEW:
         return { ...state, [action.review.id]: { ...action.review}}
