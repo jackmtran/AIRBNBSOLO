@@ -1,6 +1,6 @@
 // frontend/src/components/Navigation/index.js
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -55,7 +55,7 @@ function Navigation({ isLoaded }){
     <ul>
       {/* <ul> */}
       {/* <button type="button" className='button' onClick={forHoverHOME}> HOME </button> */}
-      <img src="https://i.imgur.com/ZKEt7ax.png" className='chairbnbpic'  onClick={forHoverHOME}/>
+      <img src="https://i.imgur.com/ZKEt7ax.png" alt="chair" className='chairbnbpic'  onClick={forHoverHOME}/>
         {isLoaded && sessionLinks}
       {/* </ul> */}
 

@@ -47,6 +47,9 @@ function App() {
           <Route path="/create">
             <MakePost />
           </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
         </Switch>
       )}
     </>

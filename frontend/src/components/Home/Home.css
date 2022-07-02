@@ -1,0 +1,32 @@
+.frontpage {
+    height: 350px;
+    width: auto;
+
+}
+
+.eachfront {
+    width: 300px
+}
+
+.chairtitle {
+    font-weight: bold;
+    padding-bottom: 3px;
+    font-size: 14px;
+    margin-bottom: none;
+}
+
+.chairstuff {
+    align-items: left;
+    padding-left: 0px;
+}
+
+
+.gridem {
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    margin-right:6.5%
+}

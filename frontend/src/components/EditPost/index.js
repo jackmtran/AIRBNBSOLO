@@ -1,9 +1,8 @@
 // frontend/src/components/LoginFormPage/index.js
 import { editChairs , deleteChairs } from '../../store/chairs'
-import React, { useEffect, useState } from 'react';
-import * as sessionActions from '../../store/session';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import './EditPost.css'
 
 function EditPost() {
@@ -24,6 +23,10 @@ function EditPost() {
 
   const [userId] = useState(user.id);
 
+  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
+  const [errors, setErrors] = useState(errorsHolder);
+
+
   const updateName = (e) => setName(e.target.value);
   const updateDescription = (e) => setDescription(e.target.value);
   const updatePrice = (e) => setPrice(e.target.value);
@@ -33,11 +36,7 @@ function EditPost() {
   const updateUrl = (e) => setUrl(e.target.value);
 
 
-  let errorsHolder = { name:'', description:'', price:'', address:'', city:'', state:'', url:'' };
-  const [errors, setErrors] = useState(errorsHolder);
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
     let error = false;
     errorsHolder = { ...errorsHolder };
 
@@ -45,7 +44,7 @@ function EditPost() {
       errorsHolder.name = "The chair's name must be at least 3 characters."
       error = true
     }
-    else if (name === '') {
+    if (name === '') {
       errorsHolder.name = "Tell us your chair's name please please please!"
       error = true
     }
@@ -61,7 +60,7 @@ function EditPost() {
       errorsHolder.description = "Descriptions must be under 50 characters."
       error = true
     }
-    if (isNaN(price)) {
+    else if (isNaN(price)) {
       errorsHolder.price = "Price must be a number"
       error = true
     }
@@ -69,20 +68,20 @@ function EditPost() {
       errorsHolder.price = "You must have a price."
       error = true
     }
-    if (address.length < 4 || address.length > 40) {
+    else if (address.length < 4 || address.length > 40) {
       errorsHolder.address = "Address must be 4 - 40 characters."
       error = true
     }
-    if (city.length < 4 || city.length > 40) {
+    else if (city.length < 4 || city.length > 40) {
       errorsHolder.city = "City must be 4 - 40 characters."
       error = true
     }
-    if (state.length < 4 || state.length > 15) {
+    else if (state.length < 4 || state.length > 15) {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image") ) {
-      errorsHolder.url = "URL must end with .jpg/.png or contain image"
+    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") ) {
+      errorsHolder.url = "URL must end with .jpg or .png"
       error = true
     }
     else if (url.length < 4) {
@@ -91,7 +90,7 @@ function EditPost() {
     }
     setErrors(errorsHolder);
 
-if(!error){
+if(!errors){
     const chairList = {
       name,
       description,
@@ -103,7 +102,7 @@ if(!error){
       userId,
       id
     }
-    // e.preventDefault();
+    e.preventDefault();
     dispatch(editChairs(chairList, id));
     history.push('/chairs')
   };

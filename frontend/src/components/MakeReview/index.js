@@ -1,10 +1,8 @@
 // frontend/src/components/LoginFormPage/index.js
-import { addReviews, getReviews } from '../../store/reviews'
-import { getChairs } from '../../store/chairs'
-import React, { useEffect, useState } from 'react';
-import * as sessionActions from '../../store/session';
+import { addReviews} from '../../store/reviews'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './MakeReview.css'
 
 function MakeReview() {

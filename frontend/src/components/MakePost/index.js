@@ -1,9 +1,9 @@
 // frontend/src/components/LoginFormPage/index.js
 import { addChairs } from '../../store/chairs'
-import React, { useEffect, useState } from 'react';
-import * as sessionActions from '../../store/session';
+import React, { useState } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './Post.css'
 
 function MakePost() {
