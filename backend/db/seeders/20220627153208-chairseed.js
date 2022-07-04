@@ -94,7 +94,7 @@ module.exports = {
         address: '1 Two St',
         city: 'City City',
         state: 'California',
-        url: "https://cdn-images.article.com/products/SKU3064/2890x1500/image38714.jpg?fit=max&w=1920&q=80&fm=webp",
+        url: "https://cdn.shopify.com/s/files/1/0275/8954/1966/products/16_39ea5f18-f499-4d85-b0ff-b45f3d0ae6fa_590x.jpg?v=1606724698",
         userId: 7,
         createdAt: new Date(),
         updatedAt: new Date()
