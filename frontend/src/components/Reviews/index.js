@@ -21,45 +21,62 @@ function ShowReviews() {
     }, [dispatch])
 
 
-
     if (reviewsArray.length === 0) {
         return <h1>Sorry, this chair doesnt have reviews!</h1>
-    }
-
-    else {
+    } else {
+        if(!user) {
         return (
             <>
                 <h1>How was the chair?</h1>
                 {reviewsObject && reviewsArray.map(review => {
-
-                    const forHoverREVDEL = (e) => {
-                        e.preventDefault();
-                        const buttonData = Number(e.target.id);
-                        for (const review of reviewsArray) {
-                            if (review.id === buttonData) {
-                                dispatch(deleteReviews(review, buttonData))
-                                history.push(`/reviews/chair/${review.chairId}`)
-                            }
-                        }
-
-                    }
-                    if (review.userId === user.id) {
-                        return <div className="chairsreviews" key={review.id}>
-                            <ul className="revtitle">{review.title}</ul>
-                            <ul className="revline">{review.reviewLine}</ul>
-                            <ul><button id={review.id} className='button buttonspace' onClick={forHoverREVDEL}>Delete</button></ul>
-                        </div>
-                    }
-                    else {
-                        return <div className="chairsreviews" key={review.id}>
-                            <ul className="revtitle">{review.title}</ul>
-                            <ul className="revline">{review.reviewLine}</ul>
-                        </div>
-                    }
+                    return <div className="chairsreviews" key={review.id}>
+                        <ul className="revtitle">{review.title}</ul>
+                        <ul className="revline">{review.reviewLine}</ul>
+                    </div>
                 })}
             </>
         )
+    } else {
+        if (reviewsArray.length === 0) {
+            return <h1>Sorry, this chair doesnt have reviews!</h1>
+        }
+
+        else {
+            return (
+                <>
+                    <h1>How was the chair?</h1>
+                    {reviewsObject && reviewsArray.map(review => {
+
+                        const forHoverREVDEL = (e) => {
+                            e.preventDefault();
+                            const buttonData = Number(e.target.id);
+                            for (const review of reviewsArray) {
+                                if (review.id === buttonData) {
+                                    dispatch(deleteReviews(review, buttonData))
+                                    history.push(`/reviews/chair/${review.chairId}`)
+                                }
+                            }
+
+                        }
+                        if (review.userId === user.id) {
+                            return <div className="chairsreviews" key={review.id}>
+                                <ul className="revtitle">{review.title}</ul>
+                                <ul className="revline">{review.reviewLine}</ul>
+                                <ul><button id={review.id} className='button buttonspace' onClick={forHoverREVDEL}>Delete</button></ul>
+                            </div>
+                        }
+                        else {
+                            return <div className="chairsreviews" key={review.id}>
+                                <ul className="revtitle">{review.title}</ul>
+                                <ul className="revline">{review.reviewLine}</ul>
+                            </div>
+                        }
+                    })}
+                </>
+            )
+        }
     }
+}
 }
 
 export default ShowReviews

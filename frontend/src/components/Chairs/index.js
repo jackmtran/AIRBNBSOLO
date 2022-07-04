@@ -23,6 +23,11 @@ function ShowChairs() {
             <>
                 <h1>Hey, have a seat.</h1>
                 {chairsObject && chairsArray.map(chair => {
+
+                    const forHoverREADREV = (e) => {
+                        e.preventDefault();
+                        history.push(`/reviews/chair/${chair.id}`);
+                    }
                     return <ul className='gridthechairs' key={chair.id}>
                         <div className="eachchair">
                             <ul><img src={chair.url} className='chairspic' alt='chairpicture' /></ul>
@@ -30,6 +35,9 @@ function ShowChairs() {
                             <ul className="chairstuff">{chair.description}</ul>
                             <ul className="chairstuff">${chair.price}/day</ul>
                             <ul className="chairstuff">{chair.address}, {chair.city}, {chair.state}</ul>
+                            <ul className="spacing">
+                                <button className='button buttonspace' id={chair.id} onClick={forHoverREADREV}>Read Reviews</button>
+                            </ul>
                         </div>
                     </ul>
                 }
