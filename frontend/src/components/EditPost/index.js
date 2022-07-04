@@ -37,6 +37,8 @@ function EditPost() {
 
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
     let error = false;
     errorsHolder = { ...errorsHolder };
 
@@ -90,7 +92,7 @@ function EditPost() {
     }
     setErrors(errorsHolder);
 
-if(!errors){
+if(!error){
     const chairList = {
       name,
       description,
@@ -102,7 +104,7 @@ if(!errors){
       userId,
       id
     }
-    e.preventDefault();
+    // e.preventDefault();
     dispatch(editChairs(chairList, id));
     history.push('/chairs')
   };
