@@ -82,8 +82,8 @@ function EditPost() {
       errorsHolder.state = "State must be 4 - 7 characters."
       error = true
     }
-    else if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") ) {
-      errorsHolder.url = "URL must end with .jpg or .png"
+    if (!url.includes(".jpg") && !url.includes(".png") && !url.includes(".JPG") && !url.includes(".PNG") && !url.includes("image")) {
+      errorsHolder.url = "URL must be jpg/png or contain image"
       error = true
     }
     else if (url.length < 4) {
