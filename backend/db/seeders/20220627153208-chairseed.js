@@ -94,14 +94,14 @@ module.exports = {
         address: '1 Two St',
         city: 'City City',
         state: 'California',
-        url: "https://www.zurifurniture.com/common/images/products/thumb/noah_dc_orange_angle.jpg",
+        url: "https://cdn-images.article.com/products/SKU3064/2890x1500/image38714.jpg?fit=max&w=1920&q=80&fm=webp",
         userId: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Target lawn chair',
-        description: 'got it on dont like it',
+        description: 'got it on sale dont like it',
         price: 15,
         address: '100 Lanes Lane',
         city: 'San Jose',
