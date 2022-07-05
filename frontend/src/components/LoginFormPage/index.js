@@ -41,6 +41,8 @@ function LoginFormPage() {
 
 
   return (
+    <>
+    <div className="demowrap">
     <form className='login-form' onSubmit={handleSubmit}>
       <h1>Log In</h1>
       <ul>
@@ -53,9 +55,11 @@ function LoginFormPage() {
         <input type="password"className='inputslast' value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
       </div>
       <button className='button' type="submit">Log In</button>
-      <button className='button' type="submit" onClick={demolog}>Demo</button>
-
     </form>
+
+    <button className='demobutton' type="submit" onClick={demolog}>Demo</button>
+    </div>
+    </>
     );
 }
 
