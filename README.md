@@ -10,7 +10,7 @@ chairbnb is a website designed for users to rent out chairs in their areas. Chai
 
 ## Installation
 Use this guide to start our website.
-*`git clone https://github.com/jackmtran/chairbnb.git`
+*`git clone https://github.com/jackmtran/chairbnb.git` This gives you all our files.
 *`npm install` in both the backend and frontend directories.
 * create your own .env in the backend directory using the given .env.example text file.
 *`npm start` in both the backend and frontend directories.
