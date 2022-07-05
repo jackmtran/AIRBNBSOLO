@@ -22,7 +22,7 @@ function HomePage() {
                 </ul>
                 <ul>
                     <img src="https://d3h6k4kfl8m9p0.cloudfront.net/stories/rP9BLw7RvegPGN2ljwjLkg.jpg" className="frontpage" alt='front' />
-                    <ul className="chairtitle">Chair</ul>
+                    <ul className="chairtitle">Chair. Great Condition</ul>
                     <ul className="chairstuff">$1.23/night</ul>
                     <ul className="chairstuff">San Jose, California</ul>
                 </ul>    </ul>
